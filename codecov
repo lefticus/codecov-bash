@@ -306,8 +306,8 @@ else
   say "ok"
 fi
 
-# Python coveragepy generation
-if [ "$(which coverage)" != "coverage not found" ];
+# python coveragepy
+if [ "$(which coverage >/dev/null 2>&1 | tr '\/' '\n' | tail -1)" = "coverage" ];
 then
   say "coverage cli exists"
   if [ "$(echo "$files" | grep 'coverage.xml')" = "" ];
